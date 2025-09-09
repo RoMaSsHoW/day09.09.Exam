@@ -30,6 +30,7 @@ namespace Exam.Api.Extentions
         {
             services.AddScoped<ICandidateRepository, CandidateRepository>();
             services.AddScoped<IVacancyRepository, VacancyRepository>();
+            services.AddScoped<IInterviewRepository, InterviewRepository>();
         }
     }
 }
