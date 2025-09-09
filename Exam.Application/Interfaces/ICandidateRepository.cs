@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exam.Domain.Interfaces
+namespace Exam.Application.Interfaces
 {
     public interface ICandidateRepository
     {

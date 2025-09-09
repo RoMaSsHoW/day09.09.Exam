@@ -1,6 +1,6 @@
 ﻿using Dapper;
+using Exam.Application.Interfaces;
 using Exam.Domain.Entities;
-using Exam.Domain.Interfaces;
 using System.Data;
 using static Dapper.SqlMapper;
 

@@ -1,4 +1,4 @@
-﻿using Exam.Domain.Interfaces;
+﻿using Exam.Application.Interfaces;
 using Exam.Infrastructure.Repositories;
 using Npgsql;
 using System.Data;

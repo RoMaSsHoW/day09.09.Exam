@@ -1,5 +1,5 @@
-﻿using Exam.Domain.Entities;
-using Exam.Domain.Interfaces;
+﻿using Exam.Application.Interfaces;
+using Exam.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Exam.Api.Controllers
