@@ -1,4 +1,6 @@
-﻿using Npgsql;
+﻿using Exam.Domain.Interfaces;
+using Exam.Infrastructure.Repositories;
+using Npgsql;
 using System.Data;
 
 namespace Exam.Api.Extentions
@@ -9,7 +11,7 @@ namespace Exam.Api.Extentions
            this IServiceCollection services,
            IConfiguration configuration)
         {
-            //ConfigureRepositories(services);
+            ConfigureRepositories(services);
 
             ConfigureDatabase(services, configuration);
 
@@ -22,6 +24,11 @@ namespace Exam.Api.Extentions
             {
                 return new NpgsqlConnection(configuration.GetConnectionString("PostgresqlDbConnection"));
             });
+        }
+
+        private static void ConfigureRepositories(IServiceCollection services)
+        {
+            services.AddScoped<ICandidateRepository, CandidateRepository>();
         }
     }
 }
