@@ -1,4 +1,5 @@
-﻿using Exam.Domain.Entities;
+﻿using Exam.Application.DTO_s;
+using Exam.Domain.Entities;
 
 namespace Exam.Application.Interfaces
 {
@@ -6,7 +7,7 @@ namespace Exam.Application.Interfaces
     {
         Interview? GetById(int id);
         List<Interview> GetAll();
-        List<(string CandidateFullName, string Result, DateTime ScheduledAt)> GetByVacancyId(int vacancyId);
+        List<InterviewSummaryDto> GetByVacancyId(int vacancyId);
         int Create(Interview interview);
         int Update(Interview interview);
         int Delete(int id);

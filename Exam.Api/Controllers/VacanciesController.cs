@@ -15,7 +15,7 @@ namespace Exam.Api.Controllers
             _repository = repository;
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public ActionResult<Vacancy> GetById(int id)
         {
             var vacancy = _repository.GetById(id);
@@ -24,7 +24,7 @@ namespace Exam.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Vacancy>> GetAll()
+        public ActionResult<List<Vacancy>> GetAll()
         {
             var vacancies = _repository.GetAll();
             return Ok(vacancies);
@@ -37,7 +37,7 @@ namespace Exam.Api.Controllers
             return CreatedAtAction(nameof(GetById), new { id }, vacancy);
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id}")]
         public ActionResult Update(int id, Vacancy vacancy)
         {
             if (id != vacancy.Id) return BadRequest("Mismatched Id");

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Exam.Application.DTO_s;
 using Exam.Application.Interfaces;
 using Exam.Domain.Entities;
 using System.Data;
@@ -45,7 +46,7 @@ namespace Exam.Infrastructure.Repositories
             return _dbConnection.Query<Interview>(sql).ToList();
         }
 
-        public List<(string CandidateFullName, string Result, DateTime ScheduledAt)> GetByVacancyId(int vacancyId)
+        public List<InterviewSummaryDto> GetByVacancyId(int vacancyId)
         {
             var sql = @"
                 select 
@@ -56,7 +57,7 @@ namespace Exam.Infrastructure.Repositories
                 join candidates c on i.candidateid = c.id
                 where i.vacancyid = @VacancyId";
 
-            return _dbConnection.Query<(string CandidateFullName, string Result, DateTime ScheduledAt)>(sql, new { VacancyId = vacancyId }).ToList();
+            return _dbConnection.Query<InterviewSummaryDto>(sql, new { VacancyId = vacancyId }).ToList();
         }
 
         public int Create(Interview interview)
