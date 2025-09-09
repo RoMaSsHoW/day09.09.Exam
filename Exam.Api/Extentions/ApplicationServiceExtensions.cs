@@ -29,6 +29,7 @@ namespace Exam.Api.Extentions
         private static void ConfigureRepositories(IServiceCollection services)
         {
             services.AddScoped<ICandidateRepository, CandidateRepository>();
+            services.AddScoped<IVacancyRepository, VacancyRepository>();
         }
     }
 }
