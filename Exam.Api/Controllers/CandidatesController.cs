@@ -31,7 +31,6 @@ namespace Exam.Api.Controllers
             [FromQuery] int? experienceYearsFrom)
         {
             var candidates = _repository.GetAll(status, salaryFrom, salaryTo, experienceYearsFrom);
-            Thread.Sleep(5000);
             return Ok(candidates);
         }
 
